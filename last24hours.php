@@ -1,4 +1,7 @@
 <?php
+	#
+	# A simple script to download any images taken from your plans over the past 24 hours
+	#
 
 	#API details
 	$observer_id = 0;
