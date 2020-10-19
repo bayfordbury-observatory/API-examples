@@ -1,3 +1,7 @@
+#
+# A simple script to download any images taken from your plans over the past 24 hours
+#
+
 from urllib.request import urlopen
 import json
 import time
