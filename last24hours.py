@@ -1,4 +1,3 @@
-#import urllib.request
 from urllib.request import urlopen
 import json
 import time
@@ -11,13 +10,13 @@ api_key = "xyz"
 unix_time = time.time()
 
 #current time in julian date
-julian_time = 2440587.5 + (unix_time/86400)
+julian_date = 2440587.5 + (unix_time/86400)
 
 #julian date 24 hours ago
-julian_time_yesterday = julian_time - 1
+julian_date_yesterday = julian_time - 1
 
 #build image search url
-url = "http://observatory.herts.ac.uk/api/imagesearch.php?id="+str(observer_id)+"&key="+api_key+"&minjd="+str(julian_time_yesterday)+"&mine=true"
+url = "http://observatory.herts.ac.uk/api/imagesearch.php?id="+str(observer_id)+"&key="+api_key+"&minjd="+str(julian_date_yesterday)+"&mine=true"
 
 #run the image search
 response = urlopen(url)
