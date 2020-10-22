@@ -17,7 +17,7 @@
 	$julian_date_yesterday = $julian_date - 1;
 
 	#build image search url
-	$url = "http://observatory.herts.ac.uk/api/imagesearch.php?id=".$observer_id."&key=".$api_key."&minjd=".$julian_date_yesterday."&mine=true";
+	$url = "http://observatory.herts.ac.uk/api/imagesearch.php?id=".$observer_id."&key=".$api_key."&minjd=".$julian_date_yesterday."&showProject=true&mine=true";
 
 	#read the return data
 	$return_data = file_get_contents($url);
@@ -43,6 +43,9 @@
 			
 			#get the id number
 			$dbid = $image_list[$n]['id'];
+				
+			#get the project name
+			$projectname = $image_list[n]['prj'];
 		
 			print ("Downloading " .$dbid.PHP_EOL);
 			
